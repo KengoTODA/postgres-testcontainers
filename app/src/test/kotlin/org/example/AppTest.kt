@@ -4,6 +4,7 @@
 package org.example
 
 import org.junit.jupiter.api.Test
+import org.slf4j.LoggerFactory
 import org.testcontainers.containers.PostgreSQLContainer
 import org.testcontainers.containers.output.Slf4jLogConsumer
 
