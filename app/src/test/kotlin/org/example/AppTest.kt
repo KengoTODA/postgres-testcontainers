@@ -15,5 +15,9 @@ class AppTest : DescribeSpec({
             withLogConsumer(Slf4jLogConsumer(LoggerFactory.getLogger("testcontainers")))
             start()
         }
+        val anotherContainer = PostgreSQLContainer("postgres:14").apply {
+            withLogConsumer(Slf4jLogConsumer(LoggerFactory.getLogger("testcontainers")))
+            start()
+        }
     }
 })
