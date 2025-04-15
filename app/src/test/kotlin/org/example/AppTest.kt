@@ -3,17 +3,17 @@
  */
 package org.example
 
+import io.kotest.core.spec.style.DescribeSpec
 import org.junit.jupiter.api.Test
 import org.slf4j.LoggerFactory
 import org.testcontainers.containers.PostgreSQLContainer
 import org.testcontainers.containers.output.Slf4jLogConsumer
 
-class AppTest {
-    @Test
-    fun launchTestContainers() {
+class AppTest : DescribeSpec({
+    it("launches TestContainers") {
         val container = PostgreSQLContainer("postgres:14").apply {
             withLogConsumer(Slf4jLogConsumer(LoggerFactory.getLogger("testcontainers")))
             start()
         }
     }
-}
+})

@@ -23,6 +23,7 @@ dependencies {
     runtimeOnly(libs.slf4j.simple)
     // This dependency is used by the application.
     testImplementation(libs.testcontainers.postgresql)
+    testImplementation(libs.kotest.runner.junit5)
 }
 
 testing {
