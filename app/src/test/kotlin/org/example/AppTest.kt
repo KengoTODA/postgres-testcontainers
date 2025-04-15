@@ -4,12 +4,14 @@
 package org.example
 
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.Assertions.assertNotNull
+import org.testcontainers.containers.PostgreSQLContainer
+import org.testcontainers.containers.output.Slf4jLogConsumer
 
 class AppTest {
     @Test
-    fun appHasAGreeting() {
-        val classUnderTest = App()
-        assertNotNull(classUnderTest.greeting, "app should have a greeting")
+    fun launchTestContainers() {
+        val container = PostgreSQLContainer("postgres:14-alpine").apply {
+            start()
+        }
     }
 }
