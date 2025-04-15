@@ -11,6 +11,7 @@ class AppTest {
     @Test
     fun launchTestContainers() {
         val container = PostgreSQLContainer("postgres:14").apply {
+            withLogConsumer(Slf4jLogConsumer(LoggerFactory.getLogger("testcontainers")))
             start()
         }
     }
