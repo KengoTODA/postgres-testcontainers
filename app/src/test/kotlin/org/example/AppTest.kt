@@ -10,7 +10,7 @@ import org.testcontainers.containers.output.Slf4jLogConsumer
 class AppTest {
     @Test
     fun launchTestContainers() {
-        val container = PostgreSQLContainer("postgres:14-alpine").apply {
+        val container = PostgreSQLContainer("postgres:14").apply {
             start()
         }
     }
